@@ -4,22 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flexboxgrid2/flexboxgrid2.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Курс по фронтэнду 1.5</title>
   </head>
   <body>
     <header>
-      <nav>
-        <a href="#whoami">Кто я такой</a>
-      </nav>
-      <h1>
-        Курс по фронтэнду.<br />
-        Версия 1.5
-      </h1>
-      <p>Премиальный. Бутиковый. Практический</p>
+      <div class="container">
+        <div class="row">
+          <nav class="col-xl-2">
+            <span class="icon">🤡</span>
+            <a href="#whoami">Кто я такой</a>
+          </nav>
+          <h1 class="col-xl-10">
+            Курс по фронтэнду.<br />
+            Версия 1.5
+          </h1>
+          <p class="col-xl-offset-2 col-xl-10">
+            Премиальный. Бутиковый. Практический
+          </p>
+        </div>
+      </div>
     </header>
-    <main>
+    <main class="container">
       <section id="whoami">
         <h2>Кто я такой</h2>
         <p>Меня зовут Евгений Родионов, и я учу людей фронтэнду</p>

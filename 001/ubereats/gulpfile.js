@@ -54,6 +54,11 @@ gulp.task('img:build', () => {
     .pipe(gulp.dest('build/img'));
 });
 
+gulp.task('favicon', () => {
+  return gulp.src('src/img/favicon/*')
+    .pipe(gulp.dest('build/img/favicon'));
+});
+
 gulp.task('svg', () => {
   return gulp.src('src/img/**/*.svg')
       .pipe(svgo())
@@ -68,11 +73,11 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default' ,gulp.series(
-  gulp.parallel('html', 'sass', 'img:dev', 'svg'),
+  gulp.parallel('html', 'sass', 'img:dev', 'svg', 'favicon'),
   gulp.parallel('watch', 'serve')
 ));
 
 gulp.task('build' ,gulp.series(
-  gulp.parallel('html', 'sass', 'img:build', 'svg'),
+  gulp.parallel('html', 'sass', 'img:build', 'svg', 'favicon'),
   gulp.parallel('watch', 'serve')
 ));

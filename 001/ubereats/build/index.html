@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
@@ -28,22 +32,31 @@
               alt="UberEats logo"
             /><span class="visually-hidden">UberEATS</span>
           </a>
-          <nav class="location-selectors page-header__location-selectors">
-            <button class="button location-selectors_button">ASAP</button>
-            <span>to</span>
-            <button class="button button--address location-selectors_button">
-              <span class="button__icon button__icon--address"></span>
-              ul. Bolshaya Dmitrovka,22
-            </button>
-          </nav>
-          <ul class="user-navigation page-header__user-navigation">
-            <li class="user-navigation__item">
+          <div class="location-selectors page-header__location-selectors">
+            <form class="location-selectors__form" action="#">
+              <select class="select location-selectors__time" name="time">
+                <option value="ASAP">ASAP</option>
+                <option value="Plan my order">Plan my order</option>
+              </select>
+              <span>to</span>
+              <input
+                class="input input--with-icon location-selectors__address"
+                type="text"
+                value="ul. Bolshaya Dmitrovka, 22"
+                placeholder="Type your location"
+              />
+            </form>
+          </div>
+          <ul class="user-nav page-header__user-nav">
+            <li class="user-nav__item">
               <a class="button" href="#">Sign In</a>
             </li>
-            <li class="user-navigation__item">
+            <li class="user-nav__item">
               <a class="button button--register" href="#">Register</a>
             </li>
-            <li class="user-navigation__item">
+            <li
+              class="user-nav__item user-nav__item--last user-nav__item--shopping-cart"
+            >
               <a class="shopping-cart" href="#"
                 ><span class="visually-hidden">Shopping Cart</span></a
               >
@@ -56,25 +69,43 @@
       <div class="container">
         <section class="search catalog__search">
           <h2 class="visually-hidden">Search on the page</h2>
-          <span></span>
+          <span class="search__icon"></span>
           <input
             class="search__input"
             type="search"
             placeholder="Search for restaurant or cuisine"
           />
         </section>
+        <div class="location-selectors catalog__location-selectors">
+          <form class="location-selectors__form" action="#">
+            <div class="row">
+              <div class="col-xs-3">
+                <label class="select__label location-selectors__label" for="time">When</label>
+                <select class="select location-selectors__time" name="time" id="time">
+                  <option value="ASAP">ASAP</option>
+                  <option value="Plan my order">Plan my order</option>
+                </select>
+              </div>
+              <div class="col-xs-9">
+                <label class="input__label location-selectors__label" for="address">To</label> 
+                <input
+                  class="input input--with-icon location-selectors__address"
+                  type="text"
+                  id="address"
+                  value="ul. Bolshaya Dmitrovka, 22"
+                  placeholder="Type your location"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
         <section class="places">
           <h2 class="title places_title">Moscow Restaurants</h2>
           <div class="places__list">
             <ul class="row">
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place001.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 1st restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--1"></div>
                   <p class="card__title">McDonalds Gazetny</p>
                   <ul class="card__features">
                     <li class="card__feature">$$</li>
@@ -83,14 +114,9 @@
                   <p class="card__delivery-time">25 - 35 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place002.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 2nd restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--2"></div>
                   <p class="card__title">DimSum & Co — CDM</p>
                   <ul class="card__features">
                     <li class="card__feature">$</li>
@@ -101,14 +127,9 @@
                   <p class="card__delivery-time">40 - 50 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place003.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 3st restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--3"></div>
                   <p class="card__title">Dvizok — Maneznaya</p>
                   <ul class="card__features">
                     <li class="card__feature">$</li>
@@ -118,14 +139,9 @@
                   <p class="card__delivery-time">35 - 45 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place004.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 4th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--4"></div>
                   <p class="card__title">NJA — NHA</p>
                   <ul class="card__features">
                     <li class="card__feature">$$</li>
@@ -134,14 +150,9 @@
                   <p class="card__delivery-time">30 - 40 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place005.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 5th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--5"></div>
                   <p class="card__title">Dot Zi — Tsvetnoy</p>
                   <ul class="card__features">
                     <li class="card__feature">$$</li>
@@ -150,14 +161,9 @@
                   <p class="card__delivery-time">40 - 50 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place006.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 6th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--6"></div>
                   <p class="card__title">Cinnabon</p>
                   <ul class="card__features">
                     <li class="card__feature">$</li>
@@ -168,14 +174,9 @@
                   <p class="card__delivery-time">25 - 35 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place007.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 7th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--7"></div>
                   <p class="card__title">PIZZELOVE</p>
                   <ul class="card__features">
                     <li class="card__feature">$$</li>
@@ -184,14 +185,9 @@
                   <p class="card__delivery-time">15 - 25 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place008.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 8th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--8"></div>
                   <p class="card__title">Zu cafe — Tverskaya</p>
                   <ul class="card__features">
                     <li class="card__feature">$</li>
@@ -200,14 +196,9 @@
                   <p class="card__delivery-time">25 - 35 Min</p>
                 </a>
               </li>
-              <li class="card places__item">
-                <a href="place.html">
-                  <img
-                    src="img/places/place009.jpg"
-                    width="308"
-                    height="256"
-                    alt="Photo of the 9th restaurant"
-                  />
+              <li class="col-md-6 col-lg-4">
+                <a class="card places__item" href="place.html">
+                  <div class="card__image card__image--9"></div>
                   <p class="card__title">Bar BQ Cafe — Maneznaya</p>
                   <ul class="card__features">
                     <li class="card__feature">$$$</li>
@@ -223,91 +214,117 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <a class="logo--footer page-footer__logo" href="#"
-          ><img
-            src="./img/ubereats-logo--footer.svg"
-            width="146"
-            height="24"
-            alt="UberEats logo"
-          /><span class="visually-hidden">UberEATS</span></a
-        >
-        <section class="footer-nav page-footer__footer-nav">
-          <h2 class="visually-hidden">Footer Navigation</h2>
-          <div class="footer-nav__left">
-            <div
-              class="custom-select footer-nav__custom-select"
-            >
-              <select
-                class="language-select"
-                name="language-select"
-                id="language-select"
-              >
-                <option value="en">English</option>
-                <option value="de">German</option>
-                <option value="es">Spanish</option>
-              </select>
+        <div class="page-footer__wrap">
+          <a class="logo--footer page-footer__logo" href="#"
+            ><img
+              src="./img/ubereats-logo--footer.svg"
+              width="146"
+              height="24"
+              alt="UberEats logo"
+            /><span class="visually-hidden">UberEATS</span></a
+          >
+          <section class="footer-nav page-footer__footer-nav">
+            <div class="row">
+              <h2 class="visually-hidden">Footer Navigation</h2>
+              <div class="col-md-4">
+                <div class="custom-select footer-nav__custom-select">
+                  <select
+                    class="language-select"
+                    name="language-select"
+                    id="language-select"
+                  >
+                    <option value="en">English</option>
+                    <option value="de">German</option>
+                    <option value="es">Spanish</option>
+                  </select>
+                </div>
+                <div class="social-group footer-social-group">
+                  <b class="social-group__hashtag"
+                    ><span class="social-group__hastag-sign">#</span>UberEats</b
+                  >
+                  <ul class="social-group__social-list social-list">
+                    <li class="social-list__item">
+                      <a
+                        class="social-list__icon social-list__icon--fb"
+                        href="#"
+                        ><span class="visually-hidden">Our Facebook</span></a
+                      >
+                    </li>
+                    <li class="social-list__item">
+                      <a
+                        class="social-list__icon social-list__icon--tw"
+                        href="#"
+                        ><span class="visually-hidden">Our Twitter</span></a
+                      >
+                    </li>
+                    <li class="social-list__item">
+                      <a
+                        class="social-list__icon social-list__icon--inst"
+                        href="#"
+                        ><span class="visually-hidden">Our Instagram</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#">About UberEats</a>
+                  </li>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#"
+                      >Become a Delivery Partner</a
+                    >
+                  </li>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#"
+                      >Become a Restaurant Partner</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#">See all cities</a>
+                  </li>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#">Pricing</a>
+                  </li>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#">Help</a>
+                  </li>
+                  <li class="footer-nav__item">
+                    <a class="footer-link" href="#">FAQs</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="social-group footer-nav__custom-select">
-              <b class="social-group__hashtag"
-                ><span class="social-group__hastag-sign">#</span>UberEats</b
-              >
-              <ul class="social-group__social-list social-list">
-                <li class="social-list__item">
-                  <a class="social-list__icon social-list__icon--fb" href="#"
-                    ><span class="visually-hidden">Our Facebook</span></a
-                  >
-                </li>
-                <li class="social-list__item">
-                  <a class="social-list__icon social-list__icon--tw" href="#"
-                    ><span class="visually-hidden">Our Twitter</span></a
-                  >
-                </li>
-                <li class="social-list__item">
-                  <a class="social-list__icon social-list__icon--inst" href="#"
-                    ><span class="visually-hidden">Our Instagram</span></a
-                  >
-                </li>
-              </ul>
+          </section>
+          <div class="store-links page-footer__store-links">
+            <a class="store-links__store store-links__store--apple" href="#"
+              ><span class="visually-hidden">On the AppStore</span></a
+            >
+            <a class="store-links__store store-links__store--google" href="#"
+              ><span class="visually-hidden">On the PlayMarket</span></a
+            >
+          </div>
+          <div class="copyright page-footer__copyright">
+            <div class="row">
+              <div class="col-md-4">
+                <span class="copyright__text"
+                  >© 2017 Uber Technologies Inc.</span
+                >
+              </div>
+              <div class="col-md-4">
+                <a class="copyright__link footer-link" href="#">Privacy</a>
+              </div>
+              <div class="col-md-4">
+                <a class="copyright__link footer-link" href="#">Terms</a>
+              </div>
             </div>
           </div>
-          <ul class="footer-nav__nav-list nav-list">
-            <li class="nav-list__item">
-              <a href="#">About UberEats</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#">Become a Delivery Partner</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#">Become a Restaurant Partner</a>
-            </li>
-          </ul>
-          <ul class="footer-nav__nav-list nav-list">
-            <li class="nav-list__item">
-              <a href="#">See all cities</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#">Pricing</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#">Help</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="#">FAQs</a>
-            </li>
-          </ul>
-        </section>
-        <div class="store-links page-footer__store-links">
-          <a class="store-links__store store-links__store--apple" href="#"
-            ><span class="visually-hidden">On the AppStore</span></a
-          >
-          <a class="store-links__store store-links__store--google" href="#"
-            ><span class="visually-hidden">On the PlayMarket</span></a
-          >
-        </div>
-        <div class="copyright page-footer__copyright">
-          <p class="copyright__text">© 2017 Uber Technologies Inc.</p>
-          <a class="copyright__link" href="#">Privacy</a>
-          <a class="copyright__link" href="#">Terms</a>
         </div>
       </div>
     </footer>
